@@ -24,7 +24,7 @@ const Hero = () => {
 <h1 className="text-3xl">Hi, My name is Damion Wilson.</h1>
 <p className="text-xl mb-4">I am a data analyst and web developer located in Canada.</p>
     </div>
-    <Link href="#about">
+    <Link href="#contact">
  <MagicButton title="Connect" icon={<FaArrowCircleRight />} position="right" />
  </Link>
  </BackGroundComponent>

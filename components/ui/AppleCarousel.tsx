@@ -15,6 +15,7 @@ import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import Image, { ImageProps } from "next/image";
 import { useOutsideClick } from "@/hooks/useOutsideClick";
+import BackGroundComponent from "../BackGroundComponent";
 
 interface CarouselProps {
     items: JSX.Element[];
@@ -121,6 +122,8 @@ console.log(currentIndex)
   };
 
   return (
+    <BackGroundComponent>
+      <h1 className=" text-purple-500 shadow-purple-600 dark:shadow-purple-600 tracking-wide shadow-md rounded-xl dark:shadow-md p-4 text-4xl font-bold text-center mt-10 sm:mt-20 dark:text-purple z-10">PROJECTS</h1>
     <CarouselContext.Provider
       value={{ onCardClose: handleCardClose,onCardOpen: handleCardOpen, currentIndex }}
     >
@@ -139,7 +142,8 @@ console.log(currentIndex)
           <div
             className={cn(
               "flex flex-row justify-start gap-4 pl-4",
-              "max-w-7xl mx-auto" // remove max-w-4xl if you want the carousel to span the full width of its container
+              // remove max-w-7xl if you want the carousel to span the full width of its container
+            // "max-w-7xl mx-auto"
             )}
           >
             {items.map((item, index) => (
@@ -184,6 +188,7 @@ console.log(currentIndex)
         </div>
       </div>
     </CarouselContext.Provider>
+    </BackGroundComponent>
   );
 };
 
