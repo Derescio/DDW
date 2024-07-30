@@ -33,9 +33,11 @@ type Card = {
 
 export const CarouselContext = createContext<{
   onCardClose: (index: number) => void;
+  onCardOpen: (index: number) => void;
   currentIndex: number;
 }>({
   onCardClose: () => {},
+  onCardOpen: () => {},
   currentIndex: 0,
 });
 
@@ -49,7 +51,9 @@ export const Carousel = ({
   const [canScrollLeft, setCanScrollLeft] = React.useState(false);
   const [canScrollRight, setCanScrollRight] = React.useState(true);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(0);
 
+console.log(currentIndex)
   useEffect(() => {
     if (carouselRef.current) {
       carouselRef.current.scrollLeft = initialScroll;
@@ -93,6 +97,7 @@ export const Carousel = ({
       carouselRef.current.scrollBy({ left: 300, behavior: "smooth" });
     }
   };
+  
 
   const handleCardClose = (index: number) => {
     if (carouselRef.current) {
@@ -111,9 +116,13 @@ export const Carousel = ({
     return window && window.innerWidth < 768;
   };
 
+  const handleCardOpen = (index: number) => {
+    setCurrentIndex(index);
+  };
+
   return (
     <CarouselContext.Provider
-      value={{ onCardClose: handleCardClose, currentIndex }}
+      value={{ onCardClose: handleCardClose,onCardOpen: handleCardOpen, currentIndex }}
     >
       <div className="relative w-full">
         <div
@@ -189,7 +198,7 @@ export const Card = ({
 }) => {
   const [open, setOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
-  const { onCardClose, currentIndex } = useContext(CarouselContext);
+  const { onCardClose, onCardOpen,currentIndex } = useContext(CarouselContext);
 
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
@@ -212,6 +221,7 @@ export const Card = ({
 
   const handleOpen = () => {
     setOpen(true);
+    onCardOpen(index); // Add this line
   };
 
   const handleClose = () => {
@@ -236,7 +246,7 @@ export const Card = ({
   exit={{ opacity: 0 }}
   ref={containerRef}
   layoutId={layout ? `card-${card.title}` : undefined}
-  className="max-w-5xl mx-auto bg-white dark:bg-neutral-900 h-fit z-[60] my-10 p-4 md:p-10 rounded-3xl font-sans relative top-1/2 transform -translate-y-1/2"
+  className="max-w-5xl mx-auto bg-white dark:bg-neutral-900 h-fit  z-[60] my-10 p-4 md:p-10 rounded-3xl font-sans relative"
 >
 
               <button
@@ -265,11 +275,10 @@ export const Card = ({
       <motion.button
         layoutId={layout ? `card-${card.title}` : undefined}
         onClick={handleOpen}
-        // className="rounded-3xl bg-gray-100 dark:bg-neutral-900 h-80 w-56 md:h-[40rem] md:w-96 overflow-hidden flex flex-col items-start justify-start relative z-10"
         className="rounded-3xl bg-gray-100 dark:bg-neutral-900 h-80 w-56 md:h-[40rem] md:w-96 overflow-hidden flex flex-col items-start justify-start relative z-10"
 
       >
-        <div className="absolute h-full top-0 inset-x-0 bg-gradient-to-b from-black/50 via-transparent to-transparent z-30 pointer-events-none" />
+       <div className="absolute h-full top-0 inset-x-0 bg-gradient-to-b from-black/50 via-transparent to-transparent z-30 pointer-events-none" />
         <div className="relative z-40 p-8">
           <motion.p
             layoutId={layout ? `category-${card.category}` : undefined}
@@ -287,11 +296,8 @@ export const Card = ({
         <BlurImage
           src={card.src}
           alt={card.title}
-        //   priority={true}
+          fill
           className="object-cover absolute z-10 inset-0"
-          sizes= {layout? "100vw" : "100%"}
-          width={0}
-          height={0}
          
         />
       </motion.button>
@@ -317,7 +323,7 @@ export const BlurImage = ({
       )}
       onLoad={() => setLoading(false)}
       src={src}
-      sizes= '100vw'
+      sizes= '50vw'
       width={width}
       height={height}
       loading="lazy"
