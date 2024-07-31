@@ -88,11 +88,11 @@ const Contact = () => {
                     </div>
 
                     <form ref={formRef} onSubmit={sendEmails}>
-                        <input type='text' name='name' placeholder='Name' required className="w-full dark:text-gray-800 text-black rounded-lg py-2.5 px-4 border focus:outline text-sm outline-gray-300 mb-[0.25rem]" />
-                        <input type='email' name='email' placeholder='Email' required className="w-full dark:text-gray-800 text-black rounded-lg py-2.5 px-4 border focus:outline text-sm outline-gray-300 mb-[0.25rem]" />
-                        <input type='tel' name='phone' placeholder='Phone' className="w-full dark:text-gray-800 text-black rounded-lg py-2.5 px-4 border focus:outline text-sm outline-gray-300 mb-[0.25rem]" />
-                        <input type='text' name='subject' placeholder='Subject' required className="w-full dark:text-gray-800 text-black rounded-lg py-2.5 px-4 border focus:outline text-sm outline-gray-300 mb-[0.25rem]" />
-                        <textarea name='message' placeholder='Message' rows={6} required className="w-full dark:text-gray-800 text-black rounded-lg py-2.5 px-4 border focus:outline text-sm outline-gray-300 mb-[0.5rem]"></textarea>
+                        <input type='text' name='name' placeholder='Name' required className="w-full dark:text-gray-200 text-black rounded-lg py-2.5 px-4 border focus:outline text-sm outline-gray-300 mb-[0.25rem]" />
+                        <input type='email' name='email' placeholder='Email' required className="w-full dark:text-gray-200 text-black rounded-lg py-2.5 px-4 border focus:outline text-sm outline-gray-300 mb-[0.25rem]" />
+                        <input type='tel' name='phone' placeholder='Phone' className="w-full dark:text-gray-200 text-black rounded-lg py-2.5 px-4 border focus:outline text-sm outline-gray-300 mb-[0.25rem]" />
+                        <input type='text' name='subject' placeholder='Subject' required className="w-full dark:text-gray-200 text-black rounded-lg py-2.5 px-4 border focus:outline text-sm outline-gray-300 mb-[0.25rem]" />
+                        <textarea name='message' placeholder='Message' rows={6} required className="w-full dark:text-gray-200 text-black rounded-lg py-2.5 px-4 border focus:outline text-sm outline-gray-300 mb-[0.5rem]"></textarea>
                         <button type='submit' className="text-white dark:bg-gray-800 bg-black hover:bg-[#d27bfa] rounded-xl text-sm px-4 py-3 w-full !mt-6">Send</button>
                     </form>
                 </div>

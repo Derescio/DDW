@@ -113,7 +113,8 @@ const AboutPage = () => {
   <p className="text-lg font-semibold">Download my CV</p>
   {/* <img src="/path-to-cv-icon.png" alt="CV Icon" className="w-12 h-12" /> */}
   <a 
-    href="/markdown.pdf" 
+
+    href="/public/rmarkdown.pdf" 
     download 
     type='application/pdf'
     className="bg-purple-500 text-white px-4 py-2 rounded hover:bg-purple-600 transition-colors"
