@@ -5,6 +5,7 @@ import { Providers } from "@/providers";
 import { ThemeToggleSidebar } from "@/components/ThemeTogglerSideBar";
 import { FloatingNavDemo } from "@/components/ui/FloatingNav";
 import { Toaster } from "@/components/ui/toaster"
+import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,10 +25,11 @@ export default function RootLayout({
         <Providers>
           <FloatingNavDemo />
         {children}
+        
         <Toaster />
         <ThemeToggleSidebar />
         </Providers>
-        
+        {/* <Footer /> */}
         </body>
     </html>
   );
