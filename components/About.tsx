@@ -124,7 +124,7 @@ const AboutPage = () => {
   </a>
 </div>
 
-      <Footer />
+      {/* <Footer /> */}
     </BackGroundComponent>
   );
 };
