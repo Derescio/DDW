@@ -114,7 +114,7 @@ const AboutPage = () => {
   {/* <img src="/path-to-cv-icon.png" alt="CV Icon" className="w-12 h-12" /> */}
   <a 
 
-    href="/public/rmarkdown.pdf" 
+    href="/rmarkdown.pdf" 
     download 
     type='application/pdf'
     className="bg-purple-500 text-white px-4 py-2 rounded hover:bg-purple-600 transition-colors"
