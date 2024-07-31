@@ -45,36 +45,36 @@
       heading: "Movie Flixx App",
       description: "An app that displays information about movies and their reviews.",
       imageUrl: "https://res.cloudinary.com/dw4ev5whz/image/upload/v1722277420/portfolio/Screenshot_New.jpg",
-      projectUrl: "https://ai-assistant-project.com",
-      techStack: ["React", "HTML5", "CSS3", "Next.js", "Tailwind CSS"]
+      projectUrl: "https://whimsical-smakager-78ff41.netlify.app/",
+      techStack: ["React", "HTML5", "CSS3", "Vailla JS"]
     },
     {
       heading: "Productivity Tracker",
-      description: "A comprehensive tool that helps users monitor and improve their productivity across various tasks and projects.",
+      description: "A comprehensive tool that helps users monitor and improve their finacial health.",
       imageUrl: "https://res.cloudinary.com/dw4ev5whz/image/upload/v1722313933/portfolio/expense_tracker_kj3clv.png",
-      projectUrl: "https://productivity-tracker-app.com",
-      techStack: ["React", "HTML5", "CSS3", "Next.js", "Tailwind CSS"]
+      projectUrl: "https://expense-tracker-refactored.vercel.app/",
+      techStack: ["React", "HTML5", "CSS3", "Next.js", "Tailwind CSS", "NeonDB"]
     },
     {
       heading: "Apple Vision Pro Showcase",
-      description: "An interactive showcase of the groundbreaking features and capabilities of the new Apple Vision Pro.",
+      description: "An App to showcase Saunas for Sale.",
       imageUrl: "https://res.cloudinary.com/dw4ev5whz/image/upload/v1722313934/portfolio/tsco_ys9vpi.png",
-      projectUrl: "https://apple-vision-pro-showcase.com",
-      techStack: ["React", "HTML5", "CSS3", "Next.js", "Tailwind CSS"]
+      projectUrl: "https://www.thetorontosaunaco.com/",
+      techStack: [ "HTML5", "CSS3", "Next.js", "Tailwind CSS","MongoDB"]
     },
     {
       heading: "iPhone 15 Pro Max Maps Integration",
-      description: "A demonstration of the advanced mapping capabilities integrated into the iPhone 15 Pro Max.",
+      description: "A Home Health Care Servies App.",
       imageUrl: "https://res.cloudinary.com/dw4ev5whz/image/upload/v1722314116/portfolio/bernadette_ttco29.png",
-      projectUrl: "https://iphone15-maps-demo.com",
-      techStack: ["React", "HTML5", "CSS3", "Next.js", "Tailwind CSS"]
+      projectUrl: "https://www.bernadettehomeservices.com/",
+      techStack: ["React", "HTML5", "CSS3", "Express"]
     },
     {
       heading: "iOS Photography Suite",
-      description: "A collection of powerful photography tools and features designed for the latest iOS devices.",
+      description: "A Property Listing App",
       imageUrl: "https://res.cloudinary.com/dw4ev5whz/image/upload/v1722313934/portfolio/property_app_oblr0z.png",
-      projectUrl: "https://ios-photography-suite.com",
-      techStack: ["React", "HTML5", "CSS3", "Next.js", "Tailwind CSS"]
+      projectUrl: "https://next-js-property-app.vercel.app/",
+      techStack: ["React", "HTML5", "CSS3", "Next.js", "Tailwind CSS" , "MongoDB"]
     },
     // {
     //   heading: "Tech Talent Hub",
