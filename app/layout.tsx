@@ -5,8 +5,8 @@ import { Providers } from "@/providers";
 import { ThemeToggleSidebar } from "@/components/ThemeTogglerSideBar";
 import { FloatingNavDemo } from "@/components/ui/FloatingNav";
 import { Toaster } from "@/components/ui/toaster"
-import Footer from "@/components/Footer";
-
+import { FloatingNav } from "@/components/FloatingNav";
+import { navItems } from "@/data";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -23,7 +23,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Providers>
-          <FloatingNavDemo />
+          <FloatingNav navItems={navItems} />
         {children}
         
         <Toaster />

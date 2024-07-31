@@ -6,7 +6,7 @@ import { CanvasRevealEffect } from "./ui/CanvasReveal";
 
 const Approach = () => {
   return (
-    <section className="w-full mt-20 sm:mt-4 py-20 z-0 container ">
+    <section className="w-full mt-20 sm:mt-4 py-20 z-0 container " id='approach'>
       <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[80vw] text-center flex flex-col items-center justify-center">
       <h1 className=" text-purple-500 shadow-purple-600 dark:shadow-purple-600 tracking-wide shadow-md rounded-xl dark:shadow-md p-4 text-4xl font-bold text-center mt-10 sm:mt-20 dark:text-purple z-10">My Approcah</h1>
       </div>
