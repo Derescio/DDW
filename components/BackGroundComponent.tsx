@@ -8,7 +8,7 @@ const BackGroundComponent = ({ children }: { children: ReactNode }) => {
       <div className="absolute pointer-events-none inset-0 flex items-center justify-center bg-white dark:bg-black bg-dark [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
      
     </div>
-    <div className="flex justify-center relative my-2 z-10">
+<div className="flex justify-center relative my-2 z-10">
 <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[80vw] text-center flex flex-col items-center justify-center">
 {children}
 </div>

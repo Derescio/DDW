@@ -63,6 +63,7 @@ const Contact = () => {
        
         <section id='contact'>
              <BackGroundComponent>
+             <h1 className=" text-purple-500 shadow-purple-600 dark:shadow-purple-600 tracking-wide shadow-md rounded-xl dark:shadow-md p-4 text-4xl font-bold text-center mt-10 sm:mt-20 dark:text-purple z-10">CONTACT</h1>
         <div className="mb-12">
             {loading && (
                 <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50 z-50">
@@ -72,7 +73,7 @@ const Contact = () => {
             <div className="mt-6">
                 <div className="grid sm:grid-cols-2 items-start gap-14 p-8 mx-auto max-w-4xl dark:bg-black  shadow-purple-600 shadow-sm rounded-md font-[sans-serif]">
                     <div>
-                        <h1 className="dark:text-gray-400 text-black text-3xl font-extrabold ">DDW Web Dev Services</h1>
+                        <h1 className="dark:text-gray-400 text-black text-3xl font-extrabold ">Damion WIlson</h1>
                         <p className="text-sm dark:text-gray-400 text-black mt-4">Thank you for visiting my portfolio! Whether you're interested in discussing a project, have questions about my work, or are looking for a dedicated professional to join your team, I'd love to hear from you. With a passion for web development and a commitment to excellence, I'm always eager to connect with others in the industry. Please feel free to reach out through the form below, and I'll get back to you as soon as possible. Let's create something amazing together!</p>
 
                         <div className="mt-12">

@@ -106,8 +106,8 @@ console.log(currentIndex)
       const gap = isMobile() ? 4 : 8;
       const scrollPosition = (cardWidth + gap) * (index + 1);
       carouselRef.current.scrollTo({
-        left: scrollPosition,
-        behavior: "smooth",
+      left: scrollPosition,
+      behavior: "smooth",
       });
       setCurrentIndex(index);
     }
@@ -226,7 +226,7 @@ export const Card = ({
 
   const handleOpen = () => {
     setOpen(true);
-    onCardOpen(index); // Add this line
+    onCardOpen(index); // Get the Index of the current card
   };
 
   const handleClose = () => {
@@ -238,12 +238,12 @@ export const Card = ({
     <>
       <AnimatePresence>
         {open && (
-          <div className="fixed inset-0 h-screen z-50 overflow-auto">
+          <div className="fixed inset-0 h-screen z-[1000] overflow-auto">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="bg-black/80 backdrop-blur-lg h-full w-full fixed inset-0"
+              className="bg-black/80 backdrop-blur-lg h-full w-full fixed inset-0 z-50"
             />
             <motion.div
   initial={{ opacity: 0 }}
@@ -251,11 +251,12 @@ export const Card = ({
   exit={{ opacity: 0 }}
   ref={containerRef}
   layoutId={layout ? `card-${card.title}` : undefined}
-  className="max-w-5xl mx-auto bg-white dark:bg-neutral-900 h-fit  z-[60] my-10 p-4 md:p-10 rounded-3xl font-sans relative"
+  // className="max-w-5xl mx-auto bg-white dark:bg-neutral-900 h-fit  z-50 my-10 p-4 md:p-10 rounded-3xl font-sans relative"
+  className="max-w-4xl mx-auto bg-white dark:bg-neutral-900 max-h-[80vh] overflow-y-auto z-50 my-10 p-4 md:p-10 rounded-3xl font-sans relative"
 >
 
               <button
-                className="sticky top-4 h-8 w-8 right-0 ml-auto bg-black dark:bg-white rounded-full flex items-center justify-center"
+                className="sticky top-4 h-8 w-8 right-0 ml-auto bg-black z-50 dark:bg-white rounded-full flex items-center justify-center"
                 onClick={handleClose}
               >
                 <IconX className="h-6 w-6 text-neutral-100 dark:text-neutral-900" />

@@ -6,10 +6,10 @@ import { CanvasRevealEffect } from "./ui/CanvasReveal";
 
 const Approach = () => {
   return (
-    <section className="w-full py-20">
-      <h1 className="heading">
-        My <span className="text-purple">approach</span>
-      </h1>
+    <section className="w-full mt-20 sm:mt-4 py-20 z-0 container ">
+      <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[80vw] text-center flex flex-col items-center justify-center">
+      <h1 className=" text-purple-500 shadow-purple-600 dark:shadow-purple-600 tracking-wide shadow-md rounded-xl dark:shadow-md p-4 text-4xl font-bold text-center mt-10 sm:mt-20 dark:text-purple z-10">My Approcah</h1>
+      </div>
       {/* remove bg-white dark:bg-black */}
       <div className="my-20 flex flex-col lg:flex-row items-center justify-center w-full gap-4">
         {/* add des prop */}
@@ -45,7 +45,7 @@ const Approach = () => {
           {/* <div className="absolute inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-black/50 dark:bg-black/90" /> */}
         </Card>
         <Card
-          title="Development & Launch"
+          title="Development & Optimization"
           icon={<AceternityIcon order="Building" />}
           des="The development phase is where your project truly takes shape. Our team of skilled developers uses the latest technologies and best practices to build a robust, scalable, and high-performing website or application. Throughout this phase, we maintain open communication to keep you informed of progress and address any emerging needs. Rigorous testing is conducted to identify and resolve any issues, ensuring a seamless and bug-free user experience."
         >
@@ -56,8 +56,8 @@ const Approach = () => {
           />
         </Card>
         <Card
-          title="Deployment and Optimization"
-          icon={<AceternityIcon order="Launching" />}
+          title="Deployment and Launch"
+          icon={<AceternityIcon order="Deployment" />}
           des="The final phase involves deploying your project to a live environment. We handle all aspects of the launch, from configuring servers to ensuring smooth functionality across all devices and browsers. Post-launch, we provide ongoing support and optimization services to ensure your website or application continues to perform at its best. We monitor performance, implement updates, and make necessary adjustments to keep your digital presence ahead of the curve."
         >
           <CanvasRevealEffect
