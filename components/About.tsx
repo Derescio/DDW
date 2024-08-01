@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import BackGroundComponent from '@/components/BackGroundComponent';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
-import Footer from '@/components/Footer';
 
 
 const tabs = [
@@ -26,10 +25,10 @@ const tabs = [
   { 
     label: 'Experience', 
     content: [
-      { title: 'Job 1', description: 'Description of job 1' },
-      { title: 'Job 2', description: 'Description of job 2' },
-      { title: 'Job 3', description: 'Description of job 3' },
-      { title: 'Job 4', description: 'Description of job 4' },
+      { title: "Frontend Engineer Intern", description: "Assisted in the development of a web-based platform using React.js, enhancing interactivity." },
+      { title: "Mobile App Dev - JSM Tech", description: "Designed and developed mobile app for both iOS & Android platforms using React Native." },
+      { title: "Freelance App Dev Project", description:  "Led the dev of a mobile app for a client, from initial concept to deployment on app stores." },
+      { title: "Lead Frontend Developer", description:  "Developed and maintained user-facing features using modern frontend technologies." },
     ],
     leftHeading: 'Experience', 
     rightHeading: 'Professional Career' 
@@ -91,11 +90,11 @@ const AboutPage = () => {
                       key={index} 
                       className={cn(
                         "dark:bg-gray-700 w-full sm:w-[calc(50%-0.5rem)]",
-                        "bg-[url('/images/Logo.pg')] bg-cover bg-center"
+                        "bg-[url('/exp5.svg')] bg-cover bg-center bg-opacity-80"
                       )}
                     >
                       <CardHeader>
-                        <CardTitle className="dark:text-white">{item.title}</CardTitle>
+                        <CardTitle className="dark:text-white font-bold">{item.title}</CardTitle>
                       </CardHeader>
                       <CardContent>
                         <CardDescription className="dark:text-gray-300">{item.description}</CardDescription>
