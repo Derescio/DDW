@@ -9,7 +9,7 @@ const Hero = () => {
   
   return (
 
-<div className="pb-2 pt-36 !dark:bg-whte">
+<div className="pb-2 pt-36 !dark:bg-whte " id="home">
 <div>
 <Spotlight className="top-40 -left-10 md:-left-32 md:-top-20 h-screen fill=white light:fill-black light:top-40 light:-left-10 light:md:-left-32 light:md:-top-20 light:h-screen"  />
 <Spotlight className="top-10 left-full w-[50vw] h-[80vh] fill=purple " />
@@ -20,7 +20,7 @@ const Hero = () => {
     words="Moving you from concept to awesome."
     />
 
-    <div className=" mt-6 flex flex-col items-center justify-center gap-y-4">
+<div className=" mt-6 flex flex-col items-center justify-center gap-y-4">
 <h1 className="text-3xl">Hi, My name is Damion Wilson.</h1>
 <p className="text-xl mb-4">I am a data analyst and web developer located in Canada.</p>
     </div>
