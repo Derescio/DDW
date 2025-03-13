@@ -7,13 +7,13 @@ const Footer = () => {
   return (
     <footer className="w-full pt-20 pb-10" id="contact">
       {/* background grid */}
-      <div className="w-full absolute left-0 sm:-bottom-[16rem] -bottom-[12rem] min-h-56">
+      {/* <div className="w-full absolute left-0 sm:-bottom-[16rem] -bottom-[12rem] min-h-56">
         <img
           src="/next.svg"
           alt="grid"
           className="text-black w-full h-[15vh] dark:opacity-75 "
         />
-      </div>
+      </div> */}
 
       {/* <div className="flex flex-col items-center">
         <h1 className="heading lg:max-w-[45vw]">
