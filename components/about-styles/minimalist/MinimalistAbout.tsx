@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { cn } from "@/lib/utils";
 import { usePathname, useSearchParams } from 'next/navigation';
@@ -114,7 +114,7 @@ interface MinimalistAboutProps {
     initialSection?: string;
 }
 
-const MinimalistAbout = ({ showNavigation = true, initialSection = 'about' }: MinimalistAboutProps) => {
+const MinimalistAboutContent = ({ showNavigation = true, initialSection = 'about' }: MinimalistAboutProps) => {
     const [activeSection, setActiveSection] = useState<string>(initialSection);
     const { scrollYProgress } = useScroll();
     const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
@@ -159,6 +159,14 @@ const MinimalistAbout = ({ showNavigation = true, initialSection = 'about' }: Mi
                 <div className="animate-bounce">↓</div>
             </motion.div>
         </div>
+    );
+};
+
+const MinimalistAbout = (props: MinimalistAboutProps) => {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <MinimalistAboutContent {...props} />
+        </Suspense>
     );
 };
 
