@@ -55,8 +55,9 @@ const WorkExperience = () => {
                     transition={{ duration: 0.5 }}
                     className="max-w-4xl mx-auto"
                 >
-                    <h2 className="text-4xl font-light text-center mb-16">Professional Experience</h2>
-
+                    <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[80vw] text-center flex flex-col items-center justify-center mb-10">
+                        <h1 className=" text-purple-500 shadow-purple-600 dark:shadow-purple-600 tracking-wide shadow-md rounded-xl dark:shadow-md p-4 text-4xl font-bold text-center mt-10 sm:mt-20 dark:text-purple z-10">Proffessional Experience</h1>
+                    </div>
                     <div className="space-y-12">
                         {experiences.map((exp, index) => (
                             <motion.div

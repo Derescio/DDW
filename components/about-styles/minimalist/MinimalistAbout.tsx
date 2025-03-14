@@ -15,9 +15,9 @@ interface Section {
 const sections: Section[] = [
     {
         id: 'about',
-        title: "About Me",
+        title: "",
         content: (
-            <div className="space-y-6 text-lg leading-relaxed">
+            <div className="space-y-6 text-lg leading-relaxed mt[-24px]">
                 <p className="text-2xl font-light italic">"A journey of transformation through technology"</p>
                 <p>Hello! I'm Damion, a data analyst and web developer with a unique journey that has shaped my career and personal growth.</p>
                 <p>I began my professional life as a Senior Engineer at Digicel Jamaica, where I honed my technical skills and developed a deep understanding of the telecommunications industry.</p>
@@ -131,34 +131,39 @@ const MinimalistAboutContent = ({ showNavigation = true, initialSection = 'about
     const currentSection = sections.find(section => section.id === activeSection);
 
     return (
-        <div className="min-h-screen bg-white dark:bg-black" id="about">
-            {showNavigation && <FloatingNavDemo />}
+        <>
+            <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[80vw] text-center flex flex-col items-center justify-center">
+                <h1 className=" text-purple-500 shadow-purple-600 dark:shadow-purple-600 tracking-wide shadow-md rounded-xl dark:shadow-md p-4 text-4xl font-bold text-center mt-10 mb-[-8px] sm:mt-20 dark:text-purple z-10">About Me</h1>
+            </div>
+            <div className="min-h-screen bg-white dark:bg-black" id="about">
+                {showNavigation && <FloatingNavDemo />}
 
-            {/* Content */}
-            <main className="container mx-auto px-4 pt-24 pb-16">
+                {/* Content */}
+                <main className="container mx-auto px-4 pt-24 pb-16">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5 }}
+                        className="max-w-3xl mx-auto"
+                    >
+                        <h1 className="text-4xl font-light mb-12 text-center">
+                            {currentSection?.title}
+                        </h1>
+                        <div className="prose prose-lg dark:prose-invert max-w-none">
+                            {currentSection?.content}
+                        </div>
+                    </motion.div>
+                </main>
+
+                {/* Scroll Indicator */}
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
-                    className="max-w-3xl mx-auto"
+                    style={{ opacity }}
+                    className="fixed bottom-8 left-1/2 transform -translate-x-1/2 text-gray-400 dark:text-gray-600"
                 >
-                    <h1 className="text-4xl font-light mb-12 text-center">
-                        {currentSection?.title}
-                    </h1>
-                    <div className="prose prose-lg dark:prose-invert max-w-none">
-                        {currentSection?.content}
-                    </div>
+                    <div className="animate-bounce">↓</div>
                 </motion.div>
-            </main>
-
-            {/* Scroll Indicator */}
-            <motion.div
-                style={{ opacity }}
-                className="fixed bottom-8 left-1/2 transform -translate-x-1/2 text-gray-400 dark:text-gray-600"
-            >
-                <div className="animate-bounce">↓</div>
-            </motion.div>
-        </div>
+            </div>
+        </>
     );
 };
 
@@ -170,6 +175,7 @@ const MinimalistAbout = ({ showNavigation = true, initialSection = "about" }: Mi
                 <MinimalistAboutContent initialSection={initialSection} />
             </Suspense>
         </div>
+
     );
 };
 
