@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { cn } from "@/lib/utils";
 import { usePathname, useSearchParams } from 'next/navigation';
+import { FloatingNavDemo } from '@/components/ui/FloatingNav';
 
 interface Section {
     id: string;
@@ -36,11 +37,21 @@ const sections: Section[] = [
                     <h3 className="text-xl font-medium">Senior Engineer</h3>
                     <p className="text-gray-600 dark:text-gray-400">Digicel Jamaica • 2015-2018</p>
                     <p>Led technical teams and drove innovation in telecommunications.</p>
+                    <ul className="list-disc list-inside mt-2 space-y-1 text-gray-600 dark:text-gray-400">
+                        <li>Managed a team of 10+ engineers</li>
+                        <li>Implemented new network infrastructure</li>
+                        <li>Reduced system downtime by 40%</li>
+                    </ul>
                 </div>
                 <div className="space-y-2">
                     <h3 className="text-xl font-medium">Web Developer</h3>
                     <p className="text-gray-600 dark:text-gray-400">Freelance • 2020-Present</p>
                     <p>Creating accessible and user-friendly web applications.</p>
+                    <ul className="list-disc list-inside mt-2 space-y-1 text-gray-600 dark:text-gray-400">
+                        <li>Developed responsive web applications</li>
+                        <li>Implemented accessibility features</li>
+                        <li>Optimized performance and SEO</li>
+                    </ul>
                 </div>
             </div>
         ),
@@ -55,6 +66,11 @@ const sections: Section[] = [
                     <h3 className="text-xl font-medium">Google Data Analytics</h3>
                     <p className="text-gray-600 dark:text-gray-400">2023</p>
                     <p>Comprehensive data analysis certification.</p>
+                    <ul className="list-disc list-inside mt-2 space-y-1 text-gray-600 dark:text-gray-400">
+                        <li>Data cleaning and preparation</li>
+                        <li>Data visualization</li>
+                        <li>Statistical analysis</li>
+                    </ul>
                 </div>
             </div>
         ),
@@ -65,9 +81,27 @@ const sections: Section[] = [
         title: "Skills",
         content: (
             <div className="space-y-8">
-                <div className="space-y-2">
-                    <h3 className="text-xl font-medium">Technical Skills</h3>
-                    <p className="text-gray-600 dark:text-gray-400">Web Development, Data Analysis, Project Management</p>
+                <div className="space-y-4">
+                    <div>
+                        <h3 className="text-xl font-medium mb-2">Technical Skills</h3>
+                        <div className="flex flex-wrap gap-2">
+                            {['React', 'Next.js', 'TypeScript', 'Node.js', 'Python', 'SQL'].map((skill, idx) => (
+                                <span key={idx} className="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-600 dark:text-purple-300 rounded-full text-sm">
+                                    {skill}
+                                </span>
+                            ))}
+                        </div>
+                    </div>
+                    <div>
+                        <h3 className="text-xl font-medium mb-2">Soft Skills</h3>
+                        <div className="flex flex-wrap gap-2">
+                            {['Team Leadership', 'Problem Solving', 'Communication', 'Project Management'].map((skill, idx) => (
+                                <span key={idx} className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">
+                                    {skill}
+                                </span>
+                            ))}
+                        </div>
+                    </div>
                 </div>
             </div>
         ),
@@ -97,7 +131,9 @@ const MinimalistAbout = ({ showNavigation = true, initialSection = 'about' }: Mi
     const currentSection = sections.find(section => section.id === activeSection);
 
     return (
-        <div className="min-h-screen bg-white dark:bg-gray-900" id="about">
+        <div className="min-h-screen bg-white dark:bg-black" id="about">
+            {showNavigation && <FloatingNavDemo />}
+
             {/* Content */}
             <main className="container mx-auto px-4 pt-24 pb-16">
                 <motion.div

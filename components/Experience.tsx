@@ -9,7 +9,7 @@ import MagicButton from "./MagicButton";
 import { FaArrowCircleRight } from "react-icons/fa";
 
 const Experience = () => {
- 
+
   const renderContent = (contentType: string) => {
     switch (contentType) {
       case 'DummyContent':
@@ -39,7 +39,7 @@ const Experience = () => {
       src: "https://res.cloudinary.com/dw4ev5whz/image/upload/v1722313934/portfolio/tsco_ys9vpi.png",
       content: renderContent('DummyContent'),
     },
-   
+
     {
       category: "Web Application",
       title: "Bernadette Home Care Services",
@@ -62,18 +62,18 @@ const Experience = () => {
 
 
   const cards = data.map((card, index) => (
-    
+
     <Card key={card.src} card={card} index={index} layout={true} />
   ));
- 
-  
- 
+
+
+
 
   return (
-    <div>
-    
+    <div id="projects">
+
       <BackGroundComponent>
-        <Carousel items={cards} autoplay={true} autoplayInterval={5000}/>
+        <Carousel items={cards} autoplay={true} autoplayInterval={5000} />
       </BackGroundComponent>
     </div>
   )
@@ -85,9 +85,9 @@ export default Experience
 const DummyContent = () => {
 
   const { currentIndex } = useContext(CarouselContext);
- // console.log(currentIndex)
-  
- 
+  // console.log(currentIndex)
+
+
   //   {
   //     heading: "AI-Powered Assistant",
   //     description: "An intelligent assistant that uses cutting-edge AI to help users with daily tasks and complex problem-solving.",
@@ -127,12 +127,12 @@ const DummyContent = () => {
   // ];
 
   const item = dummyContentData[currentIndex];
- // console.log(item)
+  // console.log(item)
 
-  
+
   return (
     <div className="bg-[#F5F5F7] p-8 md:p-14 rounded-3xl mb-4 dark:bg-black dark:text-white">
-    
+
       {/* <h2 className="text-2xl font-bold mb-4 dark:text-black">{item.heading}</h2> */}
       <p className="text-neutral-800 text-base md:text-2xl font-sans max-w-3xl mx-auto dark:text-white">
         {item.description}
@@ -150,7 +150,7 @@ const DummyContent = () => {
         width={500}
         className="md:w-1/2 md:h-1/2 h-full w-full mx-auto object-contain"
       />
-        <Link href={item.projectUrl} ><MagicButton title="View Webpage" icon={<FaArrowCircleRight />} position="right" /></Link>
+      <Link href={item.projectUrl} ><MagicButton title="View Webpage" icon={<FaArrowCircleRight />} position="right" /></Link>
     </div>
-);
+  );
 };
