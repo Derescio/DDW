@@ -162,11 +162,14 @@ const MinimalistAboutContent = ({ showNavigation = true, initialSection = 'about
     );
 };
 
-const MinimalistAbout = (props: MinimalistAboutProps) => {
+const MinimalistAbout = ({ showNavigation = true, initialSection = "about" }: MinimalistAboutProps) => {
     return (
-        <Suspense fallback={<div>Loading...</div>}>
-            <MinimalistAboutContent {...props} />
-        </Suspense>
+        <div className="relative min-h-screen">
+            {showNavigation && <FloatingNavDemo />}
+            <Suspense fallback={<div>Loading...</div>}>
+                <MinimalistAboutContent initialSection={initialSection} />
+            </Suspense>
+        </div>
     );
 };
 
