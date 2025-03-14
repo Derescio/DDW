@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
-    <div className="relative min-h-screen flex items-center justify-center overflow-hidden" id="home">
+    <div className="relative min-h-screen flex items-center justify-center overflow-hidden mt-10 " id="home">
       {/* Spotlight Effects */}
       <div className="absolute inset-0">
         <Spotlight className="top-40 -left-10 md:-left-32 md:-top-20 h-screen fill-white dark:fill-black" />
